@@ -9,8 +9,9 @@ plugins {
 val keystoreProps = Properties().apply {
     rootProject.file("keystore.properties").takeIf { it.exists() }?.inputStream()?.use(::load)
 }
+// Blank values count as "not set": GitHub passes empty strings for secrets that don't exist yet.
 fun signingValue(key: String, env: String): String? =
-    keystoreProps.getProperty(key) ?: System.getenv(env)
+    (keystoreProps.getProperty(key) ?: System.getenv(env))?.takeIf { it.isNotBlank() }
 
 android {
     namespace = "com.thevoid.ytdownloader"
@@ -40,7 +41,7 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro
             signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
         debug {
