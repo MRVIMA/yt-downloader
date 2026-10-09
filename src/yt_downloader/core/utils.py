@@ -23,16 +23,20 @@ def has_js_runtime() -> bool:
     return any(shutil.which(name) for name in ("deno", "node", "bun", "qjs"))
 
 
+DOWNLOAD_FOLDER = "THE VOID DOWNLOADER"
+LEGACY_DOWNLOAD_FOLDER = "YT Downloader"  # default before 1.0.0 final; migrated automatically
+
+
 def default_download_dir() -> Path:
     xdg = _xdg_user_dir("DOWNLOAD")
-    return (xdg or Path.home() / "Downloads") / "YT Downloader"
+    return (xdg or Path.home() / "Downloads") / DOWNLOAD_FOLDER
 
 
 def state_dir() -> Path:
     """Where logs go: %LOCALAPPDATA% on Windows, $XDG_STATE_HOME elsewhere."""
     if sys.platform == "win32":
         base = os.environ.get("LOCALAPPDATA") or Path.home() / "AppData" / "Local"
-        return Path(base) / "YT Downloader" / "logs"
+        return Path(base) / "THE VOID DOWNLOADER" / "logs"
     base = os.environ.get("XDG_STATE_HOME") or Path.home() / ".local" / "state"
     return Path(base) / APP_SLUG
 

@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.yausername.ffmpeg.FFmpeg
 import com.yausername.youtubedl_android.YoutubeDL
+import com.yausername.youtubedl_android.YoutubeDLRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -41,8 +42,17 @@ object YtDl {
         }
     }
 
-    fun version(context: Context): String? =
-        runCatching { YoutubeDL.getInstance().versionName(context) }.getOrNull()
+    /**
+     * yt-dlp version. The library only records it after an in-app update, so for the bundled
+     * copy ask yt-dlp itself. Blocking: call from a background dispatcher.
+     */
+    fun version(context: Context): String? = runCatching {
+        val dl = YoutubeDL.getInstance()
+        dl.versionName(context)?.takeIf { it.isNotBlank() }
+            ?: dl.version(context)?.takeIf { it.isNotBlank() }
+            ?: dl.execute(YoutubeDLRequest(emptyList<String>()).addOption("--version")).out.trim()
+                .takeIf { it.isNotBlank() }
+    }.getOrNull()
 
     /** Returns true if a newer yt-dlp was installed. */
     suspend fun update(context: Context): Boolean = withContext(Dispatchers.IO) {

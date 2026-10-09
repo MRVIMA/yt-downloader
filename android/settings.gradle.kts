@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "YT Downloader"
+rootProject.name = "THE VOID DOWNLOADER"
 include(":app")

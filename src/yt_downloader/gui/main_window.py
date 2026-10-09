@@ -270,8 +270,12 @@ class MainWindow(QMainWindow):
             self, f"About {APP_NAME}",
             f"<h3>{APP_NAME} {__version__}</h3>"
             "<p>Download video and audio from YouTube and hundreds of other sites.</p>"
+            "<p><b>Credits</b><br>"
+            "A <b>THE VOID</b> project by <b>THE VOID PROTOCOL</b><br>"
+            "Owner of THE VOID: <b>MRVIMA</b> (alias <b>VOIDVIMA</b>)</p>"
             "<p>Powered by <a href='https://github.com/yt-dlp/yt-dlp'>yt-dlp</a> and Qt.<br>"
-            "Released under the MIT License.</p>"
+            "Released under the MIT License · "
+            "<a href='https://github.com/MRVIMA/yt-downloader'>github.com/MRVIMA/yt-downloader</a></p>"
             "<p>Please respect copyright and each site's terms of service.</p>")
 
     # Queue management --------------------------------------------------------------------

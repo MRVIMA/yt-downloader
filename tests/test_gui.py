@@ -60,3 +60,20 @@ def test_cancel_queued_item(qapp, tmp_path):
     assert item.state == State.CANCELLED
     assert worker.job.cancelled
     assert item.retry_btn.isVisibleTo(item)
+
+
+def test_old_default_folder_migrates(settings, tmp_path, monkeypatch):
+    from yt_downloader.gui import settings as settings_mod
+
+    new_default = tmp_path / "Downloads" / "THE VOID DOWNLOADER"
+    monkeypatch.setattr(settings_mod, "default_download_dir", lambda: new_default)
+    settings.output_dir = tmp_path / "Downloads" / "YT Downloader"
+    assert settings.output_dir == new_default
+    settings.output_dir = tmp_path / "Music"  # a folder the user chose is kept
+    assert settings.output_dir == tmp_path / "Music"
+
+
+def test_default_folder_name():
+    from yt_downloader.core.utils import default_download_dir
+
+    assert default_download_dir().name == "THE VOID DOWNLOADER"

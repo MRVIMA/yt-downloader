@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="src/yt_downloader/resources/com.thevoid.YTDownloader.svg" width="112" alt="YT Downloader icon">
+<img src="src/yt_downloader/resources/com.thevoid.YTDownloader.svg" width="112" alt="THE VOID DOWNLOADER icon">
 
-# YT Downloader
+# THE VOID DOWNLOADER
 
 **A clean, native app for downloading video and audio from YouTube and 1,000+ other sites, on Linux, Windows and Android.**
 
@@ -14,7 +14,7 @@
 ![Windows](https://img.shields.io/badge/Windows-0078d4.svg)
 ![Android](https://img.shields.io/badge/Android-34a853.svg?logo=android&logoColor=white)
 
-<img src="docs/screenshot.png" alt="YT Downloader desktop app" width="640">&nbsp;&nbsp;<img src="docs/screenshot-android.png" alt="YT Downloader Android app" width="200">
+<img src="docs/screenshot.png" alt="THE VOID DOWNLOADER desktop app" width="640">&nbsp;&nbsp;<img src="docs/screenshot-android.png" alt="THE VOID DOWNLOADER Android app" width="200">
 
 </div>
 
@@ -22,9 +22,9 @@
 
 ## About
 
-**YT Downloader** saves videos and music from YouTube and [over 1,000 other websites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to your computer or phone. Paste a link, or share it from the YouTube app, choose a quality and press **Download**. You get a ready-to-play file with its title, artist and cover art already filled in.
+**THE VOID DOWNLOADER** saves videos and music from YouTube and [over 1,000 other websites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) to your computer or phone. Paste a link, or share it from the YouTube app, choose a quality and press **Download**. You get a ready-to-play file with its title, artist and cover art already filled in.
 
-It's free, open source, has no ads, and works the same way on **Linux, Windows and Android**.
+It's free, open source, has no ads, and works the same way on **Linux, Windows and Android**. A **THE VOID** project by **THE VOID PROTOCOL** (see [Credits](#credits)).
 
 ### What you can do
 
@@ -36,7 +36,7 @@ It's free, open source, has no ads, and works the same way on **Linux, Windows a
 | ⏬ **Download queue** | Add as many links as you like. Each shows its progress, speed and time left, with cancel and retry |
 | 🏷️ **Ready-to-play files** | Title, artist, cover art, chapters and subtitles are saved inside the file |
 | 🔐 **Signed-in videos** | Uses your browser's login for age-restricted or members-only videos |
-| 📱 **Share to download** (Android) | In the YouTube app tap **Share → YT Downloader**. Downloads continue in the background |
+| 📱 **Share to download** (Android) | In the YouTube app tap **Share → THE VOID DOWNLOADER**. Downloads continue in the background |
 | ⌨️ **Command line** (Linux/Windows) | `yt-downloader-cli` for scripts and power users |
 
 ### Which version should I download?
@@ -52,7 +52,7 @@ Everything you need comes with the **AppImage, Windows and Android** versions, i
 
 ### How it works
 
-YT Downloader is a friendly app built on **[yt-dlp](https://github.com/yt-dlp/yt-dlp)**, the widely used, actively maintained downloader that keeps up with changes to YouTube and other sites. YouTube sends video and sound as separate streams, so the app downloads both and uses **ffmpeg** to join them into one file.
+THE VOID DOWNLOADER is a friendly app built on **[yt-dlp](https://github.com/yt-dlp/yt-dlp)**, the widely used, actively maintained downloader that keeps up with changes to YouTube and other sites. YouTube sends video and sound as separate streams, so the app downloads both and uses **ffmpeg** to join them into one file.
 
 Sites change often. If downloads suddenly stop working, updating yt-dlp almost always fixes it:
 - **Android:** ⚙ Settings → **Update yt-dlp**
@@ -79,9 +79,9 @@ Ideas and bug reports are welcome on the [issue tracker](https://github.com/MRVI
 
 | Platform | Get it | Notes |
 |---|---|---|
-| 🐧 **Linux** | [`YT-Downloader-x.y.z-x86_64.AppImage`](#appimage-easiest) · [install script](#option-a-install-script-recommended-any-distro) · [AUR](#option-b-arch-linux-aur) | The AppImage runs on any distro with nothing to install; ffmpeg and Deno are included |
-| 🪟 **Windows 10/11** | [`YT-Downloader-x.y.z-Setup.exe`](https://github.com/MRVIMA/yt-downloader/releases/latest) | Installer, or a portable `.zip`. ffmpeg and Deno are included |
-| 🤖 **Android 8+** | [`YT-Downloader-x.y.z-android-arm64-v8a.apk`](https://github.com/MRVIMA/yt-downloader/releases/latest) | Native app with Share → Download. yt-dlp and ffmpeg are included |
+| 🐧 **Linux** | [`THE-VOID-DOWNLOADER-x.y.z-x86_64.AppImage`](#appimage-easiest) · [install script](#option-a-install-script-recommended-any-distro) · [AUR](#option-b-arch-linux-aur) | The AppImage runs on any distro with nothing to install; ffmpeg and Deno are included |
+| 🪟 **Windows 10/11** | [`THE-VOID-DOWNLOADER-x.y.z-Setup.exe`](https://github.com/MRVIMA/yt-downloader/releases/latest) | Installer, or a portable `.zip`. ffmpeg and Deno are included |
+| 🤖 **Android 8+** | [`THE-VOID-DOWNLOADER-x.y.z-android-arm64-v8a.apk`](https://github.com/MRVIMA/yt-downloader/releases/latest) | Native app with Share → Download. yt-dlp and ffmpeg are included |
 
 All builds are attached to each [GitHub release](https://github.com/MRVIMA/yt-downloader/releases). Android APKs are signed by **THE VOID PROTOCOL**; see [Verify your download](#verify-your-download).
 
@@ -92,7 +92,7 @@ All builds are attached to each [GitHub release](https://github.com/MRVIMA/yt-do
 - **Drag and drop** links onto the window, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> to paste and download in one step.
 - **Several downloads at once.** You choose how many in Preferences.
 - **Native look** on KDE Plasma, GNOME and other desktops (Qt 6), with light and dark themes that follow your system.
-- **Android:** files are saved to `Download/YT Downloader`, and videos use H.264, so they play on any phone.
+- **Android:** files are saved to `Download/THE VOID DOWNLOADER`, and videos use H.264, so they play on any phone.
 
 ## Requirements (Linux source install)
 
@@ -121,11 +121,11 @@ The AppImage, Windows and Android builds include everything below. This table on
 
 A single file that runs on almost any 64-bit distro: Ubuntu 22.04+, Debian 12+, Fedora 36+, Linux Mint 21+, openSUSE, Arch, Manjaro and others. ffmpeg and Deno are **included**, so there's nothing else to install.
 
-1. Download **`YT-Downloader-x.y.z-x86_64.AppImage`** from the [latest release](https://github.com/MRVIMA/yt-downloader/releases/latest).
+1. Download **`THE-VOID-DOWNLOADER-x.y.z-x86_64.AppImage`** from the [latest release](https://github.com/MRVIMA/yt-downloader/releases/latest).
 2. Make it executable and run it:
    ```bash
-   chmod +x YT-Downloader-*-x86_64.AppImage
-   ./YT-Downloader-*-x86_64.AppImage
+   chmod +x THE-VOID-DOWNLOADER-*-x86_64.AppImage
+   ./THE-VOID-DOWNLOADER-*-x86_64.AppImage
    ```
    You can also right-click the file → **Properties → Permissions → Allow executing as program**, then double-click it.
 
@@ -133,7 +133,7 @@ A single file that runs on almost any 64-bit distro: Ubuntu 22.04+, Debian 12+, 
 
 **Command line:** the CLI is built in:
 ```bash
-./YT-Downloader-*-x86_64.AppImage cli -a "https://www.youtube.com/watch?v=..."
+./THE-VOID-DOWNLOADER-*-x86_64.AppImage cli -a "https://www.youtube.com/watch?v=..."
 ```
 
 <details>
@@ -142,7 +142,7 @@ A single file that runs on almost any 64-bit distro: Ubuntu 22.04+, Debian 12+, 
 Some distros don't ship FUSE 2, which older AppImage tools rely on. Either install it (Ubuntu 22.04+: `sudo apt install libfuse2`; Fedora: `sudo dnf install fuse-libs`), or run the AppImage without FUSE:
 
 ```bash
-./YT-Downloader-*-x86_64.AppImage --appimage-extract-and-run
+./THE-VOID-DOWNLOADER-*-x86_64.AppImage --appimage-extract-and-run
 ```
 </details>
 
@@ -191,7 +191,7 @@ curl -fsSL https://deno.land/install.sh | sh
 ```
 </details>
 
-### 2. Install YT Downloader
+### 2. Install THE VOID DOWNLOADER
 
 #### Option A: Install script (recommended, any distro)
 
@@ -204,7 +204,7 @@ cd yt-downloader
 The script:
 - creates a private virtual environment in `~/.local/share/yt-downloader/`
 - adds the `yt-downloader` and `yt-downloader-cli` commands to `~/.local/bin/`
-- adds **YT Downloader** to your application menu, with its icon
+- adds **THE VOID DOWNLOADER** to your application menu, with its icon
 
 Add `--desktop-shortcut` to also put a launcher icon on your desktop:
 
@@ -282,24 +282,24 @@ deno --version
 
 ### Installer (recommended)
 
-1. Download **`YT-Downloader-x.y.z-Setup.exe`** from the [latest release](https://github.com/MRVIMA/yt-downloader/releases/latest).
+1. Download **`THE-VOID-DOWNLOADER-x.y.z-Setup.exe`** from the [latest release](https://github.com/MRVIMA/yt-downloader/releases/latest).
 2. Run it. If Windows SmartScreen says *"Windows protected your PC"*, click **More info → Run anyway**. This happens because the installer isn't code-signed yet.
 3. Choose whether to create a desktop icon, then click **Install**.
-4. Start **YT Downloader** from the Start menu or the desktop.
+4. Start **THE VOID DOWNLOADER** from the Start menu or the desktop.
 
 By default the installer installs only for you (no admin rights needed). You can choose "Install for all users" in the first dialog.
-**Uninstall:** *Settings → Apps → Installed apps → YT Downloader → Uninstall.*
+**Uninstall:** *Settings → Apps → Installed apps → THE VOID DOWNLOADER → Uninstall.*
 
 ### Portable version
 
-Download **`YT-Downloader-x.y.z-Windows-Portable.zip`**, extract it anywhere (a USB stick works too) and run **`YT Downloader.exe`**. Nothing is written to the registry except your settings.
+Download **`THE-VOID-DOWNLOADER-x.y.z-Windows-Portable.zip`**, extract it anywhere (a USB stick works too) and run **`THE VOID DOWNLOADER.exe`**. Nothing is written to the registry except your settings.
 
 ### Command line on Windows
 
-`yt-downloader-cli.exe` sits next to the app (by default in `%LOCALAPPDATA%\Programs\YT Downloader\`):
+`yt-downloader-cli.exe` sits next to the app (by default in `%LOCALAPPDATA%\Programs\THE VOID DOWNLOADER\`):
 
 ```powershell
-& "$env:LOCALAPPDATA\Programs\YT Downloader\yt-downloader-cli.exe" -a "https://www.youtube.com/watch?v=..."
+& "$env:LOCALAPPDATA\Programs\THE VOID DOWNLOADER\yt-downloader-cli.exe" -a "https://www.youtube.com/watch?v=..."
 ```
 
 ### Build the Windows version yourself
@@ -334,7 +334,7 @@ The installer and portable zip appear in `dist\`. GitHub Actions builds both aut
    | `…-android-universal.apk` | any device (larger download) |
 
 2. Open the downloaded file. If Android asks, allow your browser to **install unknown apps**, then tap **Install**.
-3. Open **YT Downloader** and allow notifications, so you can see download progress.
+3. Open **THE VOID DOWNLOADER** and allow notifications, so you can see download progress.
 
 The first launch takes a few seconds while the app unpacks yt-dlp.
 
@@ -342,10 +342,10 @@ The first launch takes a few seconds while the app unpacks yt-dlp.
 
 ### Use
 
-- **Share** a video from the YouTube app or any browser and choose **YT Downloader**. The link is filled in for you; pick a quality and tap **DOWNLOAD**.
+- **Share** a video from the YouTube app or any browser and choose **THE VOID DOWNLOADER**. The link is filled in for you; pick a quality and tap **DOWNLOAD**.
 - Or paste a link (tap **PASTE**).
 - Downloads continue in the background, with progress in the notification shade. Tap a finished download to play it.
-- Files are saved to **`Download/YT Downloader/`**. Playlists go into their own subfolder.
+- Files are saved to **`Download/THE VOID DOWNLOADER/`**. Playlists go into their own subfolder.
 - If downloads start failing, go to **⚙ Settings → Update yt-dlp**. Sites change often, and yt-dlp updates fix most failures.
 
 ### Build the Android app yourself
@@ -368,7 +368,7 @@ Without a signing key, release builds fall back to the debug key. Setting up a r
 Each release lists SHA-256 checksums. To check a file on Linux:
 
 ```bash
-sha256sum YT-Downloader-*.AppImage YT-Downloader-*.apk
+sha256sum THE-VOID-DOWNLOADER-*.AppImage THE-VOID-DOWNLOADER-*.apk
 ```
 
 **Android APKs** are signed with THE VOID PROTOCOL's release key. Its certificate SHA-256 fingerprint is:
@@ -377,7 +377,7 @@ sha256sum YT-Downloader-*.AppImage YT-Downloader-*.apk
 38:9B:ED:DB:D1:2D:22:D6:7F:95:AA:ED:E0:D8:46:97:68:0C:98:61:9A:D1:5C:62:05:8D:40:FD:0E:89:C9:BE
 ```
 
-Check it with `apksigner verify --print-certs YT-Downloader-*.apk` (Android SDK), or compare it in an app such as [AppVerifier](https://github.com/soupslurpr/AppVerifier). An APK with a different fingerprint was **not** built by us.
+Check it with `apksigner verify --print-certs THE-VOID-DOWNLOADER-*.apk` (Android SDK), or compare it in an app such as [AppVerifier](https://github.com/soupslurpr/AppVerifier). An APK with a different fingerprint was **not** built by us.
 
 ---
 
@@ -385,12 +385,12 @@ Check it with `apksigner verify --print-certs YT-Downloader-*.apk` (Android SDK)
 
 ### Desktop app
 
-1. Open **YT Downloader** from your application menu (or run `yt-downloader`).
+1. Open **THE VOID DOWNLOADER** from your application menu (or run `yt-downloader`).
 2. Paste a link into the box. You can also drag a link from your browser onto the window.
 3. Choose a **Quality**, and tick **Whole playlist** if you want every video in a playlist.
 4. Press **Download** or <kbd>Enter</kbd>.
 
-Files are saved to `~/Downloads/YT Downloader/` by default. Change this with **Change…** or in **Edit → Preferences**.
+Files are saved to `~/Downloads/THE VOID DOWNLOADER/` by default. Change this with **Change…** or in **Edit → Preferences**.
 
 | Shortcut | Action |
 |---|---|
@@ -430,7 +430,7 @@ Run `yt-downloader-cli --help` for every option. Formats: `best`, `2160`, `1440`
 |---|---|
 | Settings | `~/.config/yt-downloader/yt-downloader.conf` (edit via **Preferences**) |
 | Logs | `~/.local/state/yt-downloader/yt-downloader.log` (**Help → Open Log Folder**) |
-| Default downloads | `~/Downloads/YT Downloader/` |
+| Default downloads | `~/Downloads/THE VOID DOWNLOADER/` |
 
 **Preferences** include: download folder, default quality, container (Auto / MP4 / MKV), file-name template, how many downloads run at once, metadata/thumbnail/subtitle embedding, and browser cookies.
 
@@ -547,10 +547,25 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and the release process.
 
 ## Legal
 
-YT Downloader is a front end for yt-dlp and is meant for downloading content you have the right to download: your own uploads, Creative Commons or public-domain media, or content the copyright holder lets you save. Downloading may break the terms of service of some websites. **You are responsible for how you use this software.** This project is not affiliated with YouTube or Google.
+THE VOID DOWNLOADER is a front end for yt-dlp and is meant for downloading content you have the right to download: your own uploads, Creative Commons or public-domain media, or content the copyright holder lets you save. Downloading may break the terms of service of some websites. **You are responsible for how you use this software.** This project is not affiliated with YouTube or Google.
+
+## Credits
+
+| | |
+|---|---|
+| **Brand** | **THE VOID** |
+| **Developer and publisher** | **THE VOID PROTOCOL** |
+| **Owner of THE VOID** | **MRVIMA** (alias **VOIDVIMA**) |
+| **Download engine** | [yt-dlp](https://github.com/yt-dlp/yt-dlp) and its contributors |
+| **Android engine** | [youtubedl-android](https://github.com/JunkFood02/youtubedl-android) (yt-dlp, Python, ffmpeg, QuickJS for Android) |
+| **Video processing** | [FFmpeg](https://ffmpeg.org) |
+| **JavaScript runtime** | [Deno](https://deno.com) |
+| **User interface** | [Qt 6 / PySide6](https://www.qt.io/qt-for-python) (desktop), [Jetpack Compose](https://developer.android.com/compose) (Android) |
+
+<p align="center"><img src="docs/screenshot-android-credits.png" alt="Credits in the Android app" width="220"></p>
 
 ## License
 
 [MIT](LICENSE) © 2026 THE VOID PROTOCOL
 
-<div align="center"><sub>Made by <b>THE VOID PROTOCOL</b> · Powered by <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></sub></div>
+<div align="center"><sub>A <b>THE VOID</b> project · Made by <b>THE VOID PROTOCOL</b> · Owner: <b>MRVIMA</b> (VOIDVIMA) · Powered by <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></sub></div>

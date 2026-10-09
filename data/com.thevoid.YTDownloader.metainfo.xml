@@ -3,14 +3,14 @@
   <id>com.thevoid.YTDownloader</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
-  <name>YT Downloader</name>
+  <name>THE VOID DOWNLOADER</name>
   <summary>Download video and audio from YouTube and other sites</summary>
   <developer id="com.thevoid">
     <name>THE VOID PROTOCOL</name>
   </developer>
   <description>
     <p>
-      YT Downloader is a simple desktop app for saving videos and music from YouTube
+      THE VOID DOWNLOADER is a simple desktop app for saving videos and music from YouTube
       and hundreds of other websites. Paste a link, pick a quality and press Download.
     </p>
     <ul>

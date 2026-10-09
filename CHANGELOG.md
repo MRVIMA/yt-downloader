@@ -9,7 +9,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 ### Added
 - **Linux AppImage:** one file for any distro (glibc 2.35+), with ffmpeg and Deno included, a built-in CLI (`… cli`), and in-place updates via zsync.
 - **Windows app:** installer (`Setup.exe`, per-user or all users, optional desktop icon) and a portable zip, both with ffmpeg and Deno included. Built by GitHub Actions.
-- **Android app** (Android 8+): native Kotlin/Compose app with Share → Download, background downloads with notifications, cancel and retry, saving to `Download/YT Downloader`, in-app yt-dlp updates, and THE VOID dark theme.
+- **Android app** (Android 8+): native Kotlin/Compose app with Share → Download, background downloads with notifications, cancel and retry, saving to `Download/THE VOID DOWNLOADER`, in-app yt-dlp updates, and THE VOID dark theme.
 - Qt 6 desktop app with a download queue, per-item progress, speed and ETA.
 - Quality presets: best, 4K, 1440p, 1080p, 720p, 480p, 360p, MP3, M4A, Opus.
 - Whole-playlist downloads into numbered files.
@@ -22,4 +22,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 - Arch Linux AUR package (`yt-downloader`) with a one-command publish script.
 - Signed Android APKs (one per CPU type plus universal), with SHA-256 checksums published for every release.
 - A clear error message when a video needs ffmpeg but it isn't installed.
+- Downloads are saved to a `THE VOID DOWNLOADER` folder (`~/Downloads/THE VOID DOWNLOADER/` on desktop, `Download/THE VOID DOWNLOADER/` on Android). Desktop users still on the old `YT Downloader` default are moved over automatically.
+- The app is named **THE VOID DOWNLOADER** everywhere: window, app menu, Android, Windows installer and release files.
+- Credits in the About dialogs and README: a THE VOID project by THE VOID PROTOCOL; owner of THE VOID: MRVIMA (alias VOIDVIMA).
 - GitHub Actions: tests on every push, plus automatic Linux, Windows and Android builds for each release tag.

@@ -15,9 +15,9 @@ nums = ", ".join(str(int(re.match(r"\d+", p)[0])) for p in parts)
   kids=[
     StringFileInfo([StringTable('040904B0', [
       StringStruct('CompanyName', 'THE VOID PROTOCOL'),
-      StringStruct('FileDescription', 'YT Downloader'),
+      StringStruct('FileDescription', 'THE VOID DOWNLOADER'),
       StringStruct('FileVersion', '{version}'),
-      StringStruct('ProductName', 'YT Downloader'),
+      StringStruct('ProductName', 'THE VOID DOWNLOADER'),
       StringStruct('ProductVersion', '{version}'),
       StringStruct('LegalCopyright', '(c) THE VOID PROTOCOL. MIT License.'),
     ])]),

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install YT Downloader for the current user (default) or system-wide.
+# Install THE VOID DOWNLOADER for the current user (default) or system-wide.
 #
 #   ./scripts/install.sh                 # → ~/.local
 #   sudo PREFIX=/usr/local ./scripts/install.sh
@@ -40,7 +40,7 @@ command -v "$PYTHON" >/dev/null || die "python3 is required"
 command -v ffmpeg >/dev/null || warn "ffmpeg not found — install it for HD video, audio conversion and embedding"
 command -v deno >/dev/null || warn "deno not found — install it for full YouTube support (see README)"
 
-bold "Installing YT Downloader to $PREFIX"
+bold "Installing THE VOID DOWNLOADER to $PREFIX"
 
 # Reuse the distro's PySide6 when present: saves a ~300 MB download and matches the system theme.
 venv_args=()
@@ -92,7 +92,7 @@ if [ "$DESKTOP_SHORTCUT" = 1 ]; then
 fi
 
 bold "Done!"
-echo "Launch \"YT Downloader\" from your app menu, or run: yt-downloader"
+echo "Launch \"THE VOID DOWNLOADER\" from your app menu, or run: yt-downloader"
 case ":$PATH:" in
     *":$BIN_DIR:"*) ;;
     *) warn "$BIN_DIR is not on your PATH — add it to use the commands from a terminal" ;;

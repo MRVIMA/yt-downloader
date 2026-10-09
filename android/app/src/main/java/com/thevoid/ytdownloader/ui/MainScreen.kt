@@ -56,7 +56,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -67,6 +70,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.work.WorkInfo
 import com.thevoid.ytdownloader.data.Preset
 import com.thevoid.ytdownloader.download.DownloadItem
+import com.thevoid.ytdownloader.download.MediaSaver
 import com.thevoid.ytdownloader.download.YtDl
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -89,7 +93,18 @@ fun MainScreen(vm: MainViewModel) {
         topBar = {
             TopAppBar(
                 title = {
-                    Text("YT DOWNLOADER", fontWeight = FontWeight.Bold, letterSpacing = 3.sp)
+                    Text(
+                        buildAnnotatedString {
+                            append("THE VOID ")
+                            withStyle(SpanStyle(color = MaterialTheme.colorScheme.primary)) {
+                                append("DOWNLOADER")
+                            }
+                        },
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 2.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
                 },
                 actions = {
                     IconButton(onClick = { showSettings = true }) {
@@ -170,7 +185,7 @@ fun MainScreen(vm: MainViewModel) {
             if (items.isEmpty()) {
                 item {
                     Text(
-                        "No downloads yet.\nShare a video to YT Downloader, or paste a link above.",
+                        "No downloads yet.\nShare a video to THE VOID DOWNLOADER, or paste a link above.",
                         modifier = Modifier.fillMaxWidth().padding(vertical = 32.dp),
                         textAlign = TextAlign.Center,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -298,8 +313,8 @@ private fun statusText(item: DownloadItem): Pair<String, (androidx.compose.mater
     when (item.state) {
         WorkInfo.State.ENQUEUED, WorkInfo.State.BLOCKED -> "Waiting…" to { it.onSurfaceVariant }
         WorkInfo.State.RUNNING -> (item.status ?: "Starting…") to { it.onSurfaceVariant }
-        WorkInfo.State.SUCCEEDED -> (if (item.uris.size > 1) "Saved ${item.uris.size} files to Download/YT Downloader"
-            else "Saved to Download/YT Downloader") to { it.secondary }
+        WorkInfo.State.SUCCEEDED -> (if (item.uris.size > 1) "Saved ${item.uris.size} files to Download/${MediaSaver.FOLDER}"
+            else "Saved to Download/${MediaSaver.FOLDER}") to { it.secondary }
         WorkInfo.State.FAILED -> if (item.error == "Cancelled") "Cancelled" to { it.onSurfaceVariant }
             else (item.error ?: "Failed") to { it.error }
         WorkInfo.State.CANCELLED -> "Cancelled" to { it.onSurfaceVariant }

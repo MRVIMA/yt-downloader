@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.thevoid.ytdownloader.BuildConfig
+import com.thevoid.ytdownloader.download.MediaSaver
 
 @Composable
 fun SettingsDialog(vm: MainViewModel, onDismiss: () -> Unit) {
@@ -56,10 +57,20 @@ fun SettingsDialog(vm: MainViewModel, onDismiss: () -> Unit) {
                     Text(if (updating) "Updating…" else "Update yt-dlp")
                 }
                 HorizontalDivider(Modifier.padding(vertical = 12.dp))
-                Text("Files are saved to Download/YT Downloader.", style = MaterialTheme.typography.bodySmall)
+                Text("Files are saved to Download/${MediaSaver.FOLDER}.",
+                    style = MaterialTheme.typography.bodySmall)
+                HorizontalDivider(Modifier.padding(vertical = 12.dp))
+                Text("CREDITS", style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary)
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    "A THE VOID project by THE VOID PROTOCOL\n" +
+                        "Owner of THE VOID: MRVIMA (alias VOIDVIMA)",
+                    style = MaterialTheme.typography.bodySmall,
+                )
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    "YT Downloader ${BuildConfig.VERSION_NAME} · THE VOID PROTOCOL\n" +
+                    "THE VOID DOWNLOADER ${BuildConfig.VERSION_NAME} · Powered by yt-dlp\n" +
                         "github.com/MRVIMA/yt-downloader · MIT License\n\n" +
                         "Only download content you have the right to. Respect copyright " +
                         "and each site's terms of service.",

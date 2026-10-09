@@ -1,4 +1,4 @@
-# YT Downloader for Android
+# THE VOID DOWNLOADER for Android
 
 Native Android app (Kotlin + Jetpack Compose) built on
 [youtubedl-android](https://github.com/JunkFood02/youtubedl-android), which bundles yt-dlp,
@@ -16,7 +16,7 @@ Python, ffmpeg and QuickJS (for YouTube's JavaScript challenges).
 | Queue, persisted with WorkManager | `download/DownloadRepository.kt` |
 | Background download, notifications, cancel | `download/DownloadWorker.kt` |
 | yt-dlp arguments (unit-tested) | `download/DownloadSpec.kt` |
-| Saving to `Download/YT Downloader` | `download/MediaSaver.kt` (MediaStore on Android 10+) |
+| Saving to `Download/THE VOID DOWNLOADER` | `download/MediaSaver.kt` (MediaStore on Android 10+) |
 | First-run unpack and yt-dlp self-update | `download/YtDl.kt` |
 
 Videos prefer H.264 + AAC in MP4 at each resolution, so they play on every phone.

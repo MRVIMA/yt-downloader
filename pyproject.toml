@@ -10,6 +10,7 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "THE VOID PROTOCOL", email = "thevoidofficialprivacy@gmail.com" }]
+maintainers = [{ name = "MRVIMA (VOIDVIMA)", email = "thevoidofficialprivacy@gmail.com" }]
 requires-python = ">=3.10"
 keywords = ["youtube", "downloader", "yt-dlp", "video", "audio", "qt", "linux"]
 classifiers = [

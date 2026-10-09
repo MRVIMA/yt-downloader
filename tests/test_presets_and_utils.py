@@ -53,7 +53,7 @@ def test_state_dir_windows(monkeypatch, tmp_path):
 
     monkeypatch.setattr(utils.sys, "platform", "win32")
     monkeypatch.setenv("LOCALAPPDATA", str(tmp_path))
-    assert utils.state_dir() == tmp_path / "YT Downloader" / "logs"
+    assert utils.state_dir() == tmp_path / "THE VOID DOWNLOADER" / "logs"
 
 
 def test_use_bundled_tools_prepends_bin(monkeypatch, tmp_path):

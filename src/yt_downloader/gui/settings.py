@@ -10,7 +10,7 @@ from yt_downloader import APP_SLUG
 from yt_downloader.core import DownloadOptions
 from yt_downloader.core.options import CONTAINERS, COOKIE_BROWSERS, DEFAULT_TEMPLATE
 from yt_downloader.core.presets import DEFAULT_PRESET, PRESETS
-from yt_downloader.core.utils import default_download_dir
+from yt_downloader.core.utils import LEGACY_DOWNLOAD_FOLDER, default_download_dir
 
 MAX_CONCURRENT_LIMIT = 5
 
@@ -26,7 +26,13 @@ class AppSettings:
 
     @property
     def output_dir(self) -> Path:
-        return Path(self._get("download/output_dir", str(default_download_dir()), str))
+        default = default_download_dir()
+        path = Path(self._get("download/output_dir", str(default), str))
+        # Users still on the old default folder move to the new one; custom folders are kept.
+        if path == default.parent / LEGACY_DOWNLOAD_FOLDER:
+            self.output_dir = default
+            return default
+        return path
 
     @output_dir.setter
     def output_dir(self, value: Path) -> None:

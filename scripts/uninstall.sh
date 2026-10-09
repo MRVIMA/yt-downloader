@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Remove a YT Downloader install made by scripts/install.sh. Settings and downloads are kept.
+# Remove a THE VOID DOWNLOADER install made by scripts/install.sh. Settings and downloads are kept.
 set -euo pipefail
 
 APP_ID="com.thevoid.YTDownloader"
@@ -21,5 +21,5 @@ command -v update-desktop-database >/dev/null \
 [ -f "$SHARE/icons/hicolor/icon-theme.cache" ] && command -v gtk-update-icon-cache >/dev/null \
     && gtk-update-icon-cache -q -t "$SHARE/icons/hicolor" 2>/dev/null || true
 
-echo "YT Downloader removed from $PREFIX."
+echo "THE VOID DOWNLOADER removed from $PREFIX."
 echo "Your settings are in ~/.config/$SLUG and logs in ~/.local/state/$SLUG — delete them if you like."

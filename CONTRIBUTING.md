@@ -31,6 +31,6 @@ make test      # pytest (runs headless)
    - `pkgver` in `packaging/arch/PKGBUILD`
    - a new `<release>` entry in `data/com.thevoid.YTDownloader.metainfo.xml`
    - `versionName` and `versionCode` (+1) in `android/app/build.gradle.kts`
-2. Update `CHANGELOG.md`.
+2. Update `CHANGELOG.md`, and write `docs/release-notes/vX.Y.Z.md`, which becomes the text of the GitHub release page.
 3. Tag and push: `git tag v1.2.3 && git push --tags`. GitHub Actions then attaches everything to
    the release: the Python wheel and sdist, the Linux AppImage, the Windows installer and portable zip, and the Android APKs.

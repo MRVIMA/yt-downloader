@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build YT-Downloader-<version>-x86_64.AppImage (with ffmpeg and deno bundled).
+# Build THE-VOID-DOWNLOADER-<version>-x86_64.AppImage (with ffmpeg and deno bundled).
 #
 #   ./packaging/appimage/build-appimage.sh
 #
@@ -18,8 +18,8 @@ VERSION="$(python3 -c "import re;print(re.search(r'__version__ = \"(.+?)\"', ope
 ARCH="x86_64"
 BUILD="$ROOT/build/appimage"
 APPDIR="$BUILD/AppDir"
-OUT="$ROOT/dist/YT-Downloader-$VERSION-$ARCH.AppImage"
-UPDATE_INFO="gh-releases-zsync|MRVIMA|yt-downloader|latest|YT-Downloader-*-$ARCH.AppImage.zsync"
+OUT="$ROOT/dist/THE-VOID-DOWNLOADER-$VERSION-$ARCH.AppImage"
+UPDATE_INFO="gh-releases-zsync|MRVIMA|yt-downloader|latest|THE-VOID-DOWNLOADER-*-$ARCH.AppImage.zsync"
 
 step() { printf '\n\033[1m==> %s\033[0m\n' "$*"; }
 fetch() { curl -fL --retry 3 --progress-bar -o "$2" "$1"; }

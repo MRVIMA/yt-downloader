@@ -1,12 +1,12 @@
-; Inno Setup script for YT Downloader. Build after PyInstaller:
+; Inno Setup script for THE VOID DOWNLOADER. Build after PyInstaller:
 ;   iscc /DAppVersion=1.0.0 packaging\windows\installer.iss
-; Output: dist\YT-Downloader-<version>-Setup.exe
+; Output: dist\THE-VOID-DOWNLOADER-<version>-Setup.exe
 
 #ifndef AppVersion
   #define AppVersion "0.0.0"
 #endif
-#define AppName "YT Downloader"
-#define AppExe "YT Downloader.exe"
+#define AppName "THE VOID DOWNLOADER"
+#define AppExe "THE VOID DOWNLOADER.exe"
 #define Publisher "THE VOID PROTOCOL"
 #define AppURL "https://github.com/MRVIMA/yt-downloader"
 
@@ -30,7 +30,7 @@ LicenseFile=..\..\LICENSE
 SetupIconFile=yt-downloader.ico
 UninstallDisplayIcon={app}\{#AppExe}
 OutputDir=..\..\dist
-OutputBaseFilename=YT-Downloader-{#AppVersion}-Setup
+OutputBaseFilename=THE-VOID-DOWNLOADER-{#AppVersion}-Setup
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
@@ -43,7 +43,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
-Source: "..\..\dist\YT Downloader\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\..\dist\THE VOID DOWNLOADER\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\{#AppName}"; Filename: "{app}\{#AppExe}"

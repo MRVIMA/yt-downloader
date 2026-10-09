@@ -10,12 +10,14 @@ import com.thevoid.ytdownloader.download.DownloadItem
 import com.thevoid.ytdownloader.download.DownloadRepository
 import com.thevoid.ytdownloader.download.DownloadSpec
 import com.thevoid.ytdownloader.download.YtDl
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 private val URL_REGEX = Regex("""https?://\S+""")
 
@@ -49,7 +51,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     init {
         viewModelScope.launch {
             runCatching { YtDl.ensureInitialized(app) }
-            _ytDlpVersion.value = YtDl.version(app)
+            _ytDlpVersion.value = withContext(Dispatchers.IO) { YtDl.version(app) }
         }
     }
 
@@ -93,7 +95,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 onSuccess = { updated -> if (updated) "yt-dlp updated" else "yt-dlp is already up to date" },
                 onFailure = { "Update failed: ${it.message}" },
             )
-            _ytDlpVersion.value = YtDl.version(app)
+            _ytDlpVersion.value = withContext(Dispatchers.IO) { YtDl.version(app) }
             _updating.value = false
             show(message)
         }

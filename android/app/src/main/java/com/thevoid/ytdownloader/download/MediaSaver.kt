@@ -12,9 +12,9 @@ import androidx.core.content.FileProvider
 import java.io.File
 import java.io.IOException
 
-/** Copies finished files into the public Download/YT Downloader folder. */
+/** Copies finished files into the public Download/THE VOID DOWNLOADER folder. */
 object MediaSaver {
-    const val FOLDER = "YT Downloader"
+    const val FOLDER = "THE VOID DOWNLOADER"
 
     fun mimeType(file: File): String =
         MimeTypeMap.getSingleton().getMimeTypeFromExtension(file.extension.lowercase())

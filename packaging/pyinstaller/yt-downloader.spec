@@ -1,6 +1,6 @@
 # PyInstaller spec shared by the Windows and Linux (AppImage) builds. Run from the repo root:
 #   pyinstaller packaging/pyinstaller/yt-downloader.spec
-# Windows → dist/YT Downloader/{YT Downloader.exe, yt-downloader-cli.exe}
+# Windows → dist/THE VOID DOWNLOADER/{THE VOID DOWNLOADER.exe, yt-downloader-cli.exe}
 # Linux   → dist/yt-downloader/{yt-downloader, yt-downloader-cli}
 
 import sys
@@ -33,7 +33,7 @@ cli_a = Analysis([SPECPATH + "/launch_cli.py"], **common)
 
 gui_exe = EXE(
     PYZ(gui_a.pure), gui_a.scripts, [], exclude_binaries=True,
-    name="YT Downloader" if WINDOWS else "yt-downloader",
+    name="THE VOID DOWNLOADER" if WINDOWS else "yt-downloader",
     console=False, upx=False, strip=not WINDOWS, **win_extras,
 )
 cli_exe = EXE(
@@ -44,5 +44,5 @@ cli_exe = EXE(
 coll = COLLECT(
     gui_exe, gui_a.binaries, gui_a.datas,
     cli_exe, cli_a.binaries, cli_a.datas,
-    name="YT Downloader" if WINDOWS else "yt-downloader", upx=False, strip=not WINDOWS,
+    name="THE VOID DOWNLOADER" if WINDOWS else "yt-downloader", upx=False, strip=not WINDOWS,
 )

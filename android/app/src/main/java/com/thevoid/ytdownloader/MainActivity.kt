@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
         handleShare(intent)
     }
 
-    /** "Share → YT Downloader" from YouTube, a browser, etc. */
+    /** "Share → THE VOID DOWNLOADER" from YouTube, a browser, etc. */
     private fun handleShare(intent: Intent?) {
         if (intent?.action == Intent.ACTION_SEND) {
             intent.getStringExtra(Intent.EXTRA_TEXT)?.let(vm::onShared)

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=YT Downloader
+Name=THE VOID DOWNLOADER
 GenericName=Video Downloader
 Comment=Download video and audio from YouTube and other sites
 Exec=yt-downloader %U
