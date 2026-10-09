@@ -36,11 +36,11 @@ The AUR package downloads the source from GitHub, so the release has to exist **
    ```
 2. Do a dry run. It checks the tag, fills in the checksum, test-builds the package and runs `namcap`:
    ```bash
-   ./packaging/arch/aur-publish.sh --dry-run
+   bash packaging/arch/aur-publish.sh --dry-run
    ```
 3. Publish:
    ```bash
-   ./packaging/arch/aur-publish.sh
+   bash packaging/arch/aur-publish.sh
    ```
    The first push creates the package at <https://aur.archlinux.org/packages/yt-downloader>.
 4. Commit the updated `PKGBUILD` and `.SRCINFO` back to this repo.

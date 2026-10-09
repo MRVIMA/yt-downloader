@@ -198,7 +198,7 @@ curl -fsSL https://deno.land/install.sh | sh
 ```bash
 git clone https://github.com/MRVIMA/yt-downloader.git
 cd yt-downloader
-./scripts/install.sh
+bash scripts/install.sh
 ```
 
 The script:
@@ -209,7 +209,7 @@ The script:
 Add `--desktop-shortcut` to also put a launcher icon on your desktop:
 
 ```bash
-./scripts/install.sh --desktop-shortcut
+bash scripts/install.sh --desktop-shortcut
 ```
 
 It doesn't need `sudo`. If your distro already provides PySide6, the script reuses it instead of downloading Qt again.
@@ -217,19 +217,19 @@ It doesn't need `sudo`. If your distro already provides PySide6, the script reus
 **System-wide install** (all users):
 
 ```bash
-sudo PREFIX=/usr/local ./scripts/install.sh
+sudo PREFIX=/usr/local bash scripts/install.sh
 ```
 
 **Update.** Pull the latest code and run the script again. This also updates yt-dlp, which matters because YouTube changes often:
 
 ```bash
-git pull && ./scripts/install.sh
+git pull && bash scripts/install.sh
 ```
 
 **Uninstall:**
 
 ```bash
-./scripts/uninstall.sh
+bash scripts/uninstall.sh
 ```
 
 #### Option B: Arch Linux (AUR)
@@ -354,9 +354,9 @@ You need JDK 17+ and the Android SDK; [Android Studio](https://developer.android
 
 ```bash
 cd android
-./gradlew testDebugUnitTest    # unit tests
-./gradlew assembleDebug        # debug APKs → app/build/outputs/apk/debug/
-./gradlew assembleRelease      # release APKs → app/build/outputs/apk/release/
+bash gradlew testDebugUnitTest    # unit tests
+bash gradlew assembleDebug        # debug APKs → app/build/outputs/apk/debug/
+bash gradlew assembleRelease      # release APKs → app/build/outputs/apk/release/
 ```
 
 Without a signing key, release builds fall back to the debug key. Setting up a release key is described in [`android/README.md`](android/README.md).
@@ -451,7 +451,7 @@ Open **Preferences → Cookies from** and choose the browser where you're signed
 
 YouTube changes often, and yt-dlp keeps up with it, so update yt-dlp first:
 
-- Install script: `git pull && ./scripts/install.sh`
+- Install script: `git pull && bash scripts/install.sh`
 - AUR: `yay -Syu` (yt-dlp itself updates with `sudo pacman -Syu`)
 - pipx: `pipx runpip yt-downloader install -U yt-dlp`
 
@@ -474,7 +474,7 @@ update-desktop-database ~/.local/share/applications
 kbuildsycoca6 --noincremental      # KDE Plasma
 ```
 
-The installer adds the icon as SVG plus PNGs from 16 to 512 px in `~/.local/share/icons/hicolor/`. If you installed an older version, run `./scripts/install.sh` again to add the PNGs.
+The installer adds the icon as SVG plus PNGs from 16 to 512 px in `~/.local/share/icons/hicolor/`. If you installed an older version, run `bash scripts/install.sh` again to add the PNGs.
 </details>
 
 <details>
@@ -536,10 +536,10 @@ make build    # build wheel + sdist into dist/
 
 | Build | Command | Notes |
 |---|---|---|
-| AppImage | `./packaging/appimage/build-appimage.sh` | Build on an old distro (CI uses Ubuntu 22.04). An AppImage only runs where glibc is at least as new as on the build machine. |
+| AppImage | `bash packaging/appimage/build-appimage.sh` | Build on an old distro (CI uses Ubuntu 22.04). An AppImage only runs where glibc is at least as new as on the build machine. |
 | Windows | `.\packaging\windows\build.ps1` | Run on Windows with Python and Inno Setup |
-| Android | `cd android && ./gradlew assembleRelease` | see [`android/README.md`](android/README.md) |
-| AUR | `./packaging/arch/aur-publish.sh` | see [`packaging/arch/README.md`](packaging/arch/README.md) |
+| Android | `cd android && bash gradlew assembleRelease` | see [`android/README.md`](android/README.md) |
+| AUR | `bash packaging/arch/aur-publish.sh` | see [`packaging/arch/README.md`](packaging/arch/README.md) |
 
 Pushing a `vX.Y.Z` tag makes GitHub Actions build the AppImage, Windows installer and portable zip, and Android APKs, and attach them to the release.
 

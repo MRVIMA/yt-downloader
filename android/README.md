@@ -26,9 +26,9 @@ Videos prefer H.264 + AAC in MP4 at each resolution, so they play on every phone
 You need JDK 17+ and the Android SDK; Android Studio includes both.
 
 ```bash
-./gradlew testDebugUnitTest   # unit tests
-./gradlew assembleDebug       # app/build/outputs/apk/debug/*.apk
-./gradlew assembleRelease     # app/build/outputs/apk/release/*.apk
+bash gradlew testDebugUnitTest   # unit tests
+bash gradlew assembleDebug       # app/build/outputs/apk/debug/*.apk
+bash gradlew assembleRelease     # app/build/outputs/apk/release/*.apk
 ```
 
 Each build produces one APK per CPU type (`arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86`) plus a `universal` APK.

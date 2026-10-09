@@ -27,10 +27,10 @@ build:  ## Build sdist and wheel into dist/
 	$(PY) -m build
 
 install:  ## Install for the current user (~/.local)
-	./scripts/install.sh
+	bash scripts/install.sh
 
 uninstall:  ## Remove the user install
-	./scripts/uninstall.sh
+	bash scripts/uninstall.sh
 
 clean:  ## Remove build artifacts
 	rm -rf build dist *.egg-info src/*.egg-info .pytest_cache .ruff_cache
