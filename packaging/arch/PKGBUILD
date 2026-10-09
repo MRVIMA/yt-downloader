@@ -1,0 +1,40 @@
+# Maintainer: THE VOID PROTOCOL <thevoidofficialprivacy@gmail.com>
+pkgname=yt-downloader
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Qt desktop app and CLI for downloading video and audio from YouTube and other sites, powered by yt-dlp"
+arch=('any')
+url="https://github.com/MRVIMA/yt-downloader"
+license=('MIT')
+depends=('python' 'pyside6' 'yt-dlp' 'ffmpeg')
+optdepends=('python-mutagen: embed thumbnails in M4A/Opus files'
+            'python-secretstorage: read cookies from Chromium-based browsers')
+makedepends=('python-build' 'python-installer' 'python-hatchling')
+checkdepends=('python-pytest')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')  # filled in by aur-publish.sh from the GitHub release tarball
+
+_appid=com.thevoid.YTDownloader
+
+build() {
+    cd "$pkgname-$pkgver"
+    python -m build --wheel --no-isolation
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    QT_QPA_PLATFORM=offscreen PYTHONPATH="$PWD/src" python -m pytest -q
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+    install -Dm644 "data/$_appid.desktop" "$pkgdir/usr/share/applications/$_appid.desktop"
+    install -Dm644 "data/$_appid.metainfo.xml" "$pkgdir/usr/share/metainfo/$_appid.metainfo.xml"
+    install -Dm644 "src/yt_downloader/resources/$_appid.svg" \
+        "$pkgdir/usr/share/icons/hicolor/scalable/apps/$_appid.svg"
+    for png in data/icons/hicolor/*/apps/$_appid.png; do
+        install -Dm644 "$png" "$pkgdir/usr/share/${png#data/}"
+    done
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

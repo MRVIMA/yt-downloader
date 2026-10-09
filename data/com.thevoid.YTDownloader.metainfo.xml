@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.thevoid.YTDownloader</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>YT Downloader</name>
+  <summary>Download video and audio from YouTube and other sites</summary>
+  <developer id="com.thevoid">
+    <name>THE VOID PROTOCOL</name>
+  </developer>
+  <description>
+    <p>
+      YT Downloader is a simple desktop app for saving videos and music from YouTube
+      and hundreds of other websites. Paste a link, pick a quality and press Download.
+    </p>
+    <ul>
+      <li>Video up to 4K, or audio as MP3, M4A or Opus</li>
+      <li>Whole playlists with numbered files</li>
+      <li>Download queue with progress, speed and time remaining</li>
+      <li>Embedded thumbnails, metadata, chapters and subtitles</li>
+      <li>Drag and drop links onto the window</li>
+    </ul>
+    <p>Powered by yt-dlp.</p>
+  </description>
+  <launchable type="desktop-id">com.thevoid.YTDownloader.desktop</launchable>
+  <url type="homepage">https://github.com/MRVIMA/yt-downloader</url>
+  <url type="bugtracker">https://github.com/MRVIMA/yt-downloader/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Download queue</caption>
+      <image>https://raw.githubusercontent.com/MRVIMA/yt-downloader/main/docs/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+  <keywords>
+    <keyword>youtube</keyword>
+    <keyword>download</keyword>
+    <keyword>video</keyword>
+    <keyword>audio</keyword>
+  </keywords>
+  <provides>
+    <binary>yt-downloader</binary>
+    <binary>yt-downloader-cli</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2026-10-09">
+      <description>
+        <p>First stable release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

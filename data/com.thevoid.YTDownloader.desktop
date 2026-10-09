@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=YT Downloader
+GenericName=Video Downloader
+Comment=Download video and audio from YouTube and other sites
+Exec=yt-downloader %U
+Icon=com.thevoid.YTDownloader
+Terminal=false
+Categories=Network;FileTransfer;Qt;
+Keywords=youtube;download;video;audio;mp3;playlist;yt-dlp;
+StartupNotify=true
+StartupWMClass=yt-downloader
+SingleMainWindow=true

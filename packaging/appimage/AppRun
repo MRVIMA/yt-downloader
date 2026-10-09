@@ -1,0 +1,15 @@
+#!/bin/sh
+# AppImage entry point.
+#   ./YT-Downloader.AppImage [URL…]          → desktop app
+#   ./YT-Downloader.AppImage cli [options]   → command-line tool (same as yt-downloader-cli)
+HERE="$(dirname "$(readlink -f "$0")")"
+APP="$HERE/usr/lib/yt-downloader"
+
+case "$1" in
+    cli|--cli) shift; exec "$APP/yt-downloader-cli" "$@" ;;
+esac
+# Also act as the CLI when invoked through a symlink named yt-downloader-cli.
+case "$(basename "${ARGV0:-$0}")" in
+    *cli*) exec "$APP/yt-downloader-cli" "$@" ;;
+esac
+exec "$APP/yt-downloader" "$@"
