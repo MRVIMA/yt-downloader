@@ -1,0 +1,73 @@
+name: Android build
+
+on:
+  push:
+    tags: ["v*"]
+    branches: [main]
+    paths: ["android/**", ".github/workflows/android.yml"]
+  pull_request:
+    paths: ["android/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Unit tests
+        # chmod: website uploads drop the executable flag on gradlew
+        run: chmod +x gradlew && ./gradlew testDebugUnitTest
+
+      # Add these repository secrets to sign releases (see android/README.md):
+      # ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+      - name: Decode signing key
+        if: env.KEYSTORE != ''
+        env:
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: echo "$KEYSTORE" | base64 -d > "$RUNNER_TEMP/release.jks"
+
+      - name: Build release APKs
+        env:
+          YTD_KEYSTORE_FILE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && format('{0}/release.jks', runner.temp) || '' }}
+          YTD_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          YTD_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          YTD_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease
+
+      - name: Rename APKs
+        run: |
+          version=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
+          mkdir -p ../dist
+          for apk in app/build/outputs/apk/release/*.apk; do
+            abi=$(basename "$apk" | sed -E 's/app-(.*)-release(-unsigned)?\.apk/\1/')
+            cp "$apk" "../dist/THE-VOID-DOWNLOADER-$version-android-$abi.apk"
+          done
+          (cd ../dist && sha256sum *.apk > SHA256SUMS-android.txt)
+          ls -la ../dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android
+          path: |
+            dist/*.apk
+            dist/SHA256SUMS-android.txt
+
+      - name: Attach to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.apk
+            dist/SHA256SUMS-android.txt

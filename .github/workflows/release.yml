@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Check tag matches package version
+        run: |
+          version=$(python -c "import re;print(re.search(r'__version__ = \"(.+?)\"', open('src/yt_downloader/__init__.py').read())[1])")
+          [ "v$version" = "${GITHUB_REF_NAME}" ] || { echo "Tag ${GITHUB_REF_NAME} != v$version"; exit 1; }
+      - run: pip install build && python -m build
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          # Release page text: docs/release-notes/<tag>.md (falls back to GitHub's auto notes).
+          body_path: ${{ hashFiles(format('docs/release-notes/{0}.md', github.ref_name)) != '' && format('docs/release-notes/{0}.md', github.ref_name) || '' }}
+          generate_release_notes: true
