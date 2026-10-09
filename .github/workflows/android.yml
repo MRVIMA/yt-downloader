@@ -15,6 +15,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Only release APKs signed with the real key; test-key builds stay as workflow artifacts.
+      HAS_SIGNING_KEY: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
     defaults:
       run:
         working-directory: android
@@ -65,7 +68,7 @@ jobs:
             dist/SHA256SUMS-android.txt
 
       - name: Attach to release
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && env.HAS_SIGNING_KEY == 'true'
         uses: softprops/action-gh-release@v2
         with:
           files: |
