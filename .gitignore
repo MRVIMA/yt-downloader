@@ -1,0 +1,28 @@
+gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Arch packaging output
+packaging/arch/src/
+packaging/arch/pkg/
+packaging/arch/*.tar.*
+
+# Local
+downloads/
+.idea/
+.vscode/
+
+# Windows build output
+packaging/windows/version_info.txt
