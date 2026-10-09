@@ -1,1 +1,21 @@
+pkgbase = yt-downloader
+	pkgdesc = Qt desktop app and CLI for downloading video and audio from YouTube and other sites, powered by yt-dlp
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/MRVIMA/yt-downloader
+	arch = any
+	license = MIT
+	checkdepends = python-pytest
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-hatchling
+	depends = python
+	depends = pyside6
+	depends = yt-dlp
+	depends = ffmpeg
+	optdepends = python-mutagen: embed thumbnails in M4A/Opus files
+	optdepends = python-secretstorage: read cookies from Chromium-based browsers
+	source = yt-downloader-1.0.0.tar.gz::https://github.com/MRVIMA/yt-downloader/archive/refs/tags/v1.0.0.tar.gz
+	sha256sums = SKIP
 
+pkgname = yt-downloader
